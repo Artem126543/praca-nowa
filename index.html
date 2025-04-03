@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mój ulubiony przedmiot: Matematyka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mój ulubiony przedmiot: Matematyka</h1>
+        <p>Cześć! Jestem uczniem 7 klasy i chciałbym opowiedzieć o moim ulubionym przedmiocie – matematyce. Matematyka to nie tylko liczby i działania, ale także logiczne myślenie i rozwiązywanie problemów.</p>
+        <h2>Podstawowe operacje matematyczne</h2>
+        <p id="wynik"></p>
+        <h2>Ciekawostki o matematyce</h2>
+        <ul>
+            <li>Zero nie było używane w matematyce przez wiele lat – po raz pierwszy pojawiło się w Indiach.</li>
+            <li>Matematyka jest używana w każdej dziedzinie nauki, od fizyki po informatykę.</li>
+            <li>Pierwsze liczby pierwsze były znane już w starożytnej Grecji.</li>
+            <li>Największa znana liczba pierwsza ma ponad 24 miliony cyfr!</li>
+        </ul>
+        <h2>Prosty quiz matematyczny</h2>
+        <p>Jakie jest wynik działania 12 × 12?</p>
+        <input type="text" id="quiz">
+        <button onclick="sprawdzOdpowiedz()">Sprawdź</button>
+        <p id="odpowiedz"></p>
+        <script>
+            function dodawanie(a, b) {
+                return a + b;
+            }
+            function odejmowanie(a, b) {
+                return a - b;
+            }
+            function mnozenie(a, b) {
+                return a * b;
+            }
+            function dzielenie(a, b) {
+                return b !== 0 ? (a / b) : "Nie można dzielić przez zero!";
+            }
+            
+            let x = 10;
+            let y = 5;
+            let wynik = `
+                Dodawanie: ${x} + ${y} = ${dodawanie(x, y)}<br>
+                Odejmowanie: ${x} - ${y} = ${odejmowanie(x, y)}<br>
+                Mnożenie: ${x} * ${y} = ${mnozenie(x, y)}<br>
+                Dzielenie: ${x} / ${y} = ${dzielenie(x, y)}<br>
+            `;
+            document.getElementById("wynik").innerHTML = wynik;
+
+            function sprawdzOdpowiedz() {
+                let odpowiedz = document.getElementById("quiz").value;
+                let poprawna = 144;
+                if (parseInt(odpowiedz) === poprawna) {
+                    document.getElementById("odpowiedz").innerHTML = "Brawo! To poprawna odpowiedź!";
+                } else {
+                    document.getElementById("odpowiedz").innerHTML = "Niestety, spróbuj ponownie.";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
